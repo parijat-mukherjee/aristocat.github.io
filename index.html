@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      #loading-screen {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, #783860, #1c1521);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .loader-img {
+        width: 5vw;
+        height: 5vw;
+        margin-top: 30%;
+        animation: spin 1.5s linear infinite, glow 2s infinite alternate;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes glow {
+        to {
+          box-shadow: 0 0 10px 5px #f4316d;
+        }
+      }
+    </style>
+
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&family=Tektur:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Aristocat Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Loading Screen -->
+
+    <div id="loading-screen">
+      <div class="loader">
+        <img src="./pics/loader.svg" class="loader-img" />
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <span class="close" id="closeModal">&times;</span>
+
+      <img src="./pics/chevron-arrow.svg" class="chevron-left" />
+
+      <img src="./pics/chevron-arrow.svg" class="chevron-right" />
+
+      <img class="main-img" src="" alt="Image Modal" />
+
+      <div class="slider img1">
+        <img class="slider-image" src="./pics/img1.png" />
+        <div class="slider-text">
+          <span class="slider-text-title">
+            A Day In Time <br />
+            Illustration
+          </span>
+          <span class="slider-text-body">
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            imperdiet lacus eu justo malesuada commodo. Suspendisse sed magna
+            facilisis, eleifend mi nec, aliquet nunc Maecenas in ex et felis
+            porttitor facilisis. Proin dictum est in urna convallis, sit amet
+            dignissim lorem porta.
+          </span>
+        </div>
+      </div>
+
+      <div class="slider img2">
+        <img class="slider-image" src="./pics/img2.png" />
+        <div class="slider-text">
+          <span class="slider-text-title">
+            A Day In Tyme <br />
+            Illustration
+          </span>
+          <span class="slider-text-body">
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            imperdiet lacus eu justo malesuada commodo. Suspendisse sed magna
+            facilisis, eleifend mi nec, aliquet nunc Maecenas in ex et felis
+            porttitor facilisis. Proin dictum est in urna convallis, sit amet
+            dignissim lorem porta.
+          </span>
+        </div>
+      </div>
+
+      <div class="slider img3">
+        <img class="slider-image" src="./pics/img3.png" />
+        <div class="slider-text">
+          <span class="slider-text-title">
+            A Day In Rime <br />
+            Illustration
+          </span>
+          <span class="slider-text-body">
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            imperdiet lacus eu justo malesuada commodo. Suspendisse sed magna
+            facilisis, eleifend mi nec, aliquet nunc Maecenas in ex et felis
+            porttitor facilisis. Proin dictum est in urna convallis, sit amet
+            dignissim lorem porta.
+          </span>
+        </div>
+      </div>
+
+      <div class="show-more-button" id="show-more-button">
+        <span>Show More</span>
+      </div>
+
+      <div class="next-container">
+        <span class="next-text">NEXT</span>
+        <div class="arrow"></div>
+      </div>
+
+      <div class="prev-container">
+        <span class="prev-text">PREVIOUS</span>
+        <div class="prev-arrow"></div>
+      </div>
+
+      <div class="slider-dot-container">
+        <div class="slider-dots">
+          <div class="dot active" id="1"></div>
+          <div class="dot" id="2"></div>
+          <div class="dot" id="3"></div>
+        </div>
+      </div>
+
+      <img src="./pics/tab-panel-new.png" class="tab-panel" />
+
+      <div class="tab-container">
+        <div class="tab">
+          <img
+            src="./pics/illus-tab-button.png"
+            class="tab-button"
+            id="tab-button-1"
+          />
+        </div>
+        <div class="tab">
+          <img
+            src="./pics/anim-tab-button.png"
+            class="tab-button"
+            id="tab-button-2"
+          />
+        </div>
+        <div class="tab">
+          <img
+            src="./pics/content-tab-button.png"
+            class="tab-button"
+            id="tab-button-3"
+          />
+        </div>
+        <div class="tab">
+          <img
+            src="./pics/webdev-tab-button.png"
+            class="tab-button"
+            id="tab-button-4"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Background Layers -->
+
+    <div class="layer-0-sky">
+      <img
+        src="./pics/layer-0-sky.png"
+        alt="layer-0-sky"
+        class="layer-0-sky-img"
+      />
+    </div>
+
+    <div class="layer-background-buildings">
+      <img
+        src="./pics/layer-background-buildings.png"
+        alt="layer-background-buildings"
+        class="layer-background-buildings-img"
+      />
+    </div>
+
+    <div class="layer-12-light-1">
+      <img
+        src="./pics/layer-12-light-1.png"
+        alt="layer-12-light-1"
+        class="layer-12-light-1-img"
+      />
+    </div>
+
+    <div class="layer-12-light-2">
+      <img
+        src="./pics/layer-12-light-2.png"
+        alt="layer-12-light-2"
+        class="layer-12-light-2-img"
+      />
+    </div>
+
+    <div class="building-main">
+      <img
+        src="./pics/building-main.png"
+        alt="building-main"
+        class="building-main-img"
+      />
+
+      <div id="reach-out-button" class="reach-out-button">
+        <dotlottie-player
+          src="https://lottie.host/7a20bcb5-747c-472b-b193-9f0d2b10a1d6/ZnSqE4yN2X.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="reach-out-lottie"
+          loop
+        ></dotlottie-player>
+      </div>
+
+      <div class="roof">
+        <img
+          src="./pics/roof_railing.png"
+          alt="roof-railing"
+          class="roof-railing-img"
+        />
+
+        <dotlottie-player
+          src="https://lottie.host/eb46205c-0b5a-4e4e-a28d-291e1ef60800/xSfi1IePYp.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="roof-lottie"
+          loop
+        ></dotlottie-player>
+
+        <dotlottie-player
+          src="https://lottie.host/0eb13bf1-8787-469c-ac48-1c73827218ac/5rzTUILMzJ.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="smoker-cat-lottie"
+          loop
+        ></dotlottie-player>
+
+        <dotlottie-player
+          src="https://lottie.host/cd5c60c4-4ed7-48d2-b294-30eb7366e7aa/XI8GZ9oGr7.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="smoke-lottie"
+          loop
+        ></dotlottie-player>
+      </div>
+
+      <div class="illustration">
+        <dotlottie-player
+          src="https://lottie.host/0f4da9f0-e6d8-43f7-996d-11ec32c17522/fbrNmpROY0.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="illustration-lottie"
+          loop
+        ></dotlottie-player>
+
+        <dotlottie-player
+          src="https://lottie.host/d05f1c55-72b9-4d69-8905-16af01164254/am6k55nzXO.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="illustration-lottie-door"
+        ></dotlottie-player>
+
+        <div id="illustration-hidden-div" class="illustration-hidden-div"></div>
+      </div>
+
+      <div class="animation">
+        <dotlottie-player
+          src="https://lottie.host/f3879649-55d1-4023-970c-f50a8e2d69ec/hgGqAI5ShD.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="animation-lottie"
+          loop
+        ></dotlottie-player>
+
+        <dotlottie-player
+          src="https://lottie.host/e77eda50-963f-4040-bdbb-69654b5b5da5/Nkoil7J7Nl.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="animation-lottie-door"
+        ></dotlottie-player>
+
+        <div id="animation-hidden-div" class="animation-hidden-div"></div>
+      </div>
+
+      <div class="content">
+        <dotlottie-player
+          src="https://lottie.host/7c20c7d9-3310-46b5-b6fc-d462a4d1c2c2/jgwrV1m2ZY.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="content-lottie"
+          loop
+        ></dotlottie-player>
+        <dotlottie-player
+          src="https://lottie.host/f460067a-b883-4cad-b089-66eeeb3995af/DnDzGudHrX.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="content-lottie-door"
+        ></dotlottie-player>
+
+        <div id="content-hidden-div" class="content-hidden-div"></div>
+      </div>
+
+      <div class="webdev">
+        <dotlottie-player
+          src="https://lottie.host/440d36f2-dd08-4955-8e17-6688d8638b6c/bqV2KSwkUf.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="webdev-lottie"
+          loop
+        ></dotlottie-player>
+        <dotlottie-player
+          src="https://lottie.host/7a915729-f90f-4527-a2fe-80f970065688/ootqhKgm5q.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="webdev-lottie-door"
+        ></dotlottie-player>
+
+        <div id="webdev-hidden-div" class="webdev-hidden-div"></div>
+      </div>
+
+      <div class="testimonial">
+        <dotlottie-player
+          src="https://lottie.host/df2173f3-90eb-4381-a34f-9d34de0ba56e/fL7YuEB5Jz.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="testimonial-lottie"
+          loop
+        ></dotlottie-player>
+      </div>
+
+      <div class="testimonial-text">
+        <p class="testimonial-text-p">
+          "Aristocat is a fantastic studio. I love how they make my art. Thank
+          you Aristocat Studio."
+        </p>
+        <br />
+        <p class="testimonial-text-p-name">- John Doe -</p>
+        <p class="testimonial-text-p-loc">San Francisco, CA</p>
+      </div>
+
+      <div id="contact-form" class="contact-form">
+        <h1>Interested in working with us?</h1>
+        <input
+          type="text"
+          placeholder="Name"
+          class="neon-input"
+          id="name"
+          required
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          class="neon-input"
+          id="email"
+          required
+        />
+        <textarea
+          placeholder="Your Query"
+          rows="4"
+          class="neon-input"
+          id="query"
+          required
+        ></textarea>
+      </div>
+
+      <div id="footer-options-faqs" class="footer-options">
+        <h1>FAQs</h1>
+      </div>
+
+      <div id="footer-options-privacy-policy" class="footer-options">
+        <h1>Privacy Policy</h1>
+      </div>
+
+      <div id="footer-options-tos" class="footer-options">
+        <h1>Terms of Service</h1>
+      </div>
+
+      <div
+        id="footer-options-scroll-to-top"
+        class="footer-options"
+        onclick="scrollToTop()"
+      >
+        <h1>Scroll to Top</h1>
+      </div>
+
+      <div class="spray-painter">
+        <dotlottie-player
+          src="https://lottie.host/22eedb2b-3bbd-4990-8ccb-1c3a5a56833d/jNWzDYoa52.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="spray-painter-lottie"
+          loop
+        ></dotlottie-player>
+      </div>
+
+      <div class="disc-jockey">
+        <dotlottie-player
+          src="https://lottie.host/328c2194-292d-433e-b517-d8d4f8a06f76/dg71Nw4IhA.json"
+          background="transparent"
+          speed="1"
+          direction="1"
+          mode="normal"
+          class="disc-jockey-lottie"
+          loop
+        ></dotlottie-player>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
